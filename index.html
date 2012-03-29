@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Feed</title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/vendor/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/soundcloud.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/handlebars.js"></script>
+  <script type="text/javascript" src="javascripts/vendor/underscore.js"></script>
+  <script type="text/javascript" src="javascripts/application.js"></script>
+  <script type="text/javascript" src="javascripts/utils.js"></script>
+  <script type="text/javascript" src="javascripts/init.js"></script>
+</head>
+<body>
+
+  <div id="header">
+    <h1>The Feed</h1>
+  </div>
+
+  <div id="content">
+    <div id="items">
+      <img src="images/loading.gif" class="loading"/>
+    </div>
+  </div>
+
+  <div id="footer">
+    &copy; Josh Nesbitt 2012. Built with <a href="http://getsignalbox.com" target="_blank">Signal Box</a>.
+  </div>
+
+  <script type="text/html" id="items-template">
+    {{#each items}}
+      <div class="item {{ _meta.colour }}" style="width: {{ _meta.width }}%" data-id="{{ _id }}">
+        <a href="{{ link }}" class="launch">&rarr;</a>
+        <h2>{{ title }}</h2>
+        <p>{{{ body }}}</p>
+
+        <div class="preview"></div>
+      </div>
+    {{/each}}
+  </script>
+
+</body>
+</html>
