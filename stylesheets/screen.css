@@ -65,6 +65,11 @@
 .item.purple { border-color: #A839B2; }
 .item.blue { border-color: #0074AE; }
 
+.item.green a { color: #58AA00; }
+.item.pink a { color: #FF0071; }
+.item.purple a { color: #A839B2; }
+.item.blue a { color: #0074AE; }
+
 #content img.loading {
   margin: 40px 10px;
 }
