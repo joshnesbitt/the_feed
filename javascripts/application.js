@@ -42,7 +42,7 @@ window.App = function(settings){
   var ItemCollection = function(collection){
     this.template = Handlebars.compile($('#items-template').html());
 
-    this.items = _.map(collection, function(obj){
+    this.items = _.map(collection.reverse(), function(obj){
       return new Item(obj);
     }, this);
 
