@@ -147,6 +147,7 @@ window.App = function(settings){
         this.items = new ItemCollection(response.records);
 
         $("#items").html(this.items.render());
+        $('.body a').attr('target', '_blank');
       }, this)
     });
   };
