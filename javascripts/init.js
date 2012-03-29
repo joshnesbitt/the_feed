@@ -4,7 +4,7 @@ $(function(){
     credentials : {
       sb_version  : 1,
       sb_username : 'thefeed',
-      sb_app_name : 'music_app'
+      sb_app_name : 'thefeed-production'
     },
     resource : 'items'
   });
