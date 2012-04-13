@@ -60,7 +60,7 @@ window.App = function(settings){
   };
 
   var YouTubePreview = function(item){
-    this.parseRegex = /youtube\.com\/watch\?v=([A-Za-z0-9_]+)/i;
+    this.parseRegex = /youtube\.com\/watch\?v=([A-Za-z0-9_-]+)/i;
     this.item = item;
 
     this.parseID = function(url){
