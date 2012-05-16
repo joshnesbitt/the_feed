@@ -1,4 +1,4 @@
-App.utils = {
+App.Util = {
 
   randomColour : function(){
     return _.shuffle([
@@ -16,12 +16,6 @@ App.utils = {
       70,
       80
     ])[0]
-  },
-
-  appendParamsToURL : function(url, params){
-    var prefix = (url.indexOf("?") > -1) ? "&" : "?";
-
-    return url + prefix + $.param(params);
   }
 
 };
