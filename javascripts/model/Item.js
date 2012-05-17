@@ -3,11 +3,10 @@ App.Model.Item = SignalBox.Backbone.Model.extend({
   resource : 'items',
 
   initialize : function(){
-    // this.on('change:link')
-    this.set('type', this.detectType());
+    this.set('type', this.parseType());
   },
 
-  detectType : function(){
+  parseType : function(){
     var type = 'unknown',
         link = this.get('link');
 
@@ -21,4 +20,3 @@ App.Model.Item = SignalBox.Backbone.Model.extend({
   }
 
 });
-

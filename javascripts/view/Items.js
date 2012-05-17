@@ -8,7 +8,7 @@ App.View.Items = Backbone.View.extend({
     this.items = items;
     this.$el.empty();
 
-    items.each(function(item){
+    _(items.models.reverse()).each(function(item){
       var view = new App.View.Item;
 
       this.$el.append(view.render(item));

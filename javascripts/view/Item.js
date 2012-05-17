@@ -6,6 +6,10 @@ App.View.Item = Backbone.View.extend({
 
   initialize : function(){
     this.template = Handlebars.compile($('#item-template').html());
+    this.meta = {
+      colour : App.Util.randomColour(),
+      width  : App.Util.randomWidth()
+    };
   },
 
   render : function(item){
@@ -13,10 +17,7 @@ App.View.Item = Backbone.View.extend({
 
     this.$el.html(this.template({
       item : this.item.toJSON(),
-      meta : {
-        colour : App.Util.randomColour(),
-        width  : App.Util.randomWidth()
-      }
+      meta : this.meta
     })).find('.body a').attr('target', '_blank');
 
     return this.$el;
@@ -41,9 +42,7 @@ App.View.Item = Backbone.View.extend({
 
     }
 
-    if(!this.player)
-      this.player = new klass({ el : this.$el.find('.player') });
-
+    this.player = new klass({ el : this.$el.find('.player') });
     this.player.render(this.item);
   },
 
@@ -52,6 +51,5 @@ App.View.Item = Backbone.View.extend({
     delete this.player;
     this.render(this.item);
   }
-
 
 });
