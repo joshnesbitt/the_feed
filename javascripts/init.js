@@ -1,14 +1,12 @@
 $(function(){
 
-  window.application = new window.App({
-    credentials : {
-      sb_version  : 1,
-      sb_username : 'signalboxdemo',
-      sb_app_name : 'thefeed-production'
-    },
-    resource : 'items'
+  SignalBox.setup({
+    username : 'signalboxdemo',
+    app      : 'thefeed-production'
   });
 
-  window.application.run();
+  window.application = new App.View.Application({
+    el : $('body')
+  });
 
 });
